@@ -35,6 +35,6 @@ print(len(values_from_json_2))
 unique_to_json_2 = set(values_from_json_2) - set(values_from_json_1)
 
 # Imprime los resultados
-print("People that you are currently following but not follows you instead:")
+print(f"People that you are currently following but not follows you instead ({len(unique_to_json_2)}):")
 for value in unique_to_json_2:
     print(value)
