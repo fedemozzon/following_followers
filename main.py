@@ -6,6 +6,8 @@ def extract_values_from_json(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
+            if "relationships_following" in data:
+                data = data["relationships_following"]
             for item in data:
                 if 'string_list_data' in item and len(item['string_list_data']) > 0:
                     value = item['string_list_data'][0].get('value')
