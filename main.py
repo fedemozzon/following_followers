@@ -27,11 +27,6 @@ file_path_2 = './followers_and_following/following.json'
 values_from_json_1 = extract_values_from_json(file_path_1)
 values_from_json_2 = extract_values_from_json(file_path_2)
 
-# Imprime los arrays resultantes
-print("Values from followers:", values_from_json_1)
-print("Values from following:", values_from_json_2)
-print(len(values_from_json_1))
-print(len(values_from_json_2))
 unique_to_json_2 = set(values_from_json_2) - set(values_from_json_1)
 
 # Imprime los resultados
