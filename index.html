@@ -152,7 +152,6 @@
 // Function to extract values from JSON
 function extractValuesFromJson(data) {
     let values = [];
-    
     // Check if the data is an array
     if (Array.isArray(data)) {
         data.forEach(item => {
@@ -174,7 +173,9 @@ function extractValuesFromJson(data) {
         // Function to find users you're following but who don't follow you back
         function findUsersNotFollowingBack(followersJson, followingJson) {
             const followers = new Set(extractValuesFromJson(followersJson));
-            const following = extractValuesFromJson(followingJson);
+            console.log(followers)
+            const following = extractValuesFromJson(Object.values(followingJson)[0])
+            console.log(followingJson)
             const notFollowingBack = following.filter(user => !followers.has(user));
             return notFollowingBack;
         }
